@@ -121,3 +121,7 @@ x = {
 )
 
 x.free;
+
+//Finally, if you ever want to look something up in SuperCollider's help documentation, either put the cursor over the UGen or method you would
+//like help with and depress CMND-d (or CTRL-d in Windows/Linux), or press SHIFT-CMND-d (SHIFT-CTRL-d in Windows/Linux) and type in
+//the desired subject.
