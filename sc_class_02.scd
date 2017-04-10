@@ -233,11 +233,11 @@ x.free; //and then free the Synth.
 SynthDef.new(\limiter, {|in=0, out=0|
 	var sig_in, leaked, limited;
 
-	sig_in = In.ar(0, 2); //Here we make use of the In UGen, which is the complement to Out (in that it brings a signal stream INTO the Synth)
+	sig_in = In.ar(in, 2); //Here we make use of the In UGen, which is the complement to Out (in that it brings a signal stream INTO the Synth)
 	leaked = LeakDC.ar(sig_in); //This eliminates any built up DC offset (explanation in class)
 	limited = Limiter.ar(leaked, 0.99);  //This makes sure the signal maxes out JUST below unity gain.
 
-	ReplaceOut.ar(0, limited); //ReplaceOut MUST be used so that the resulting signal overwrites the previous instead of mixes with it!
+	ReplaceOut.ar(out, limited); //ReplaceOut MUST be used so that the resulting signal overwrites the previous instead of mixes with it!
 }).add;
 )
 
