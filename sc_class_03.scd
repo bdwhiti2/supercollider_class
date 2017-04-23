@@ -94,7 +94,7 @@ SynthDef.new(\wonderfulSound, {arg freq=440, amp=1, out=0;
 /*
 III. Envelopes
 
-An envelope defines the shape of the sound being generated. It's natural analogue in instrument performance is articulation,
+An envelope defines the shape of the sound being generated. Its natural analogue in instrument performance is articulation,
 though attention is paid not only to the onset of the sound, but also its behavior while sustaining and releasing.
 Not defining an envelope can be risky. Speakers cannot go from a point of rest to a point of maximum excitation,
 and vice versa, abruptly; attempting to do so will cause a very noticeable artifact when beginning or ending the sound,
