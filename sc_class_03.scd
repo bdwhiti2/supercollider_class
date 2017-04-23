@@ -222,7 +222,7 @@ x.free;
 As seen above, Mix is a UGen that will take two or more channels of audio output and mix them down to a
 monophonic signal. This is important as it not only combines sounds within one channel to create layers of complexity
 (as having one frequency, amplitude, and UGen per channel will create a binaural effect instead of stereo),
-it also enables one to have more than two signals output over stereo. While the Mix.fill syntax was used above,
+it also enables one to have more than two signals output over stereo. While the Mix.fill syntax is found above,
 it is not typically used---it being a convenience method for Mix(Array.fill()). The syntax for Mix we'll deal with for now
 is the following:
 
