@@ -332,6 +332,33 @@ SynthDef.new(\thick_texture, {|out=0, freq=55|
 
 x = Synth.new(\thick_texture);
 
+/*
+In the above example, the fill method for Array is passing the variable numComponents, equal to 8, into the
+partial argument in the following function as the following array of integers:
+[0, 1, 2, 3, 4, 5, 6, 7]
+
+Why the above array and not [1, 2, 3, 4, 5, 6, 7, 8]? It is because SuperCollider, similar to other C-like languages
+(i.e. languages based on the C programming language), is "zero-indexed." A zero-indexed language means that
+constituent components of arrays are assigned indices beginning with the number 0, not 1. (Incidentally,
+this is why the default hardware output audio bus is bus 0, not bus 1.)
+There are numerous advantages to this in programming; if you wish to learn more, I would suggest reading this
+short summary on Wikipedia: https://en.wikipedia.org/wiki/Array_data_type#Index_origin.
+
+Since SC is zero-indexed, but we wish to start our array by multiplying the frequency by 1, we need to make sure to add 1
+to each index value. Hence freq * (partial + 1).
+
+Finally, when it comes to functions within other functions, one can begin the process of declaring arguments and variables
+again, with these remaining local to the nested function. In the above example, we need an argument to pass the
+[0, 1, 2, 3, 4, 5, 6, 7] array into (as a kind of bridge), so we create an argument called 'partial' and do NOT assign it a
+default value. The function nested in the sig variable has access to 'partial', but it is important to note that the rest of the
+SynthDef does *not*. On the other hand, the nested function *does* have access to all of the arguments and variables
+declared earlier in the SynthDef. This has to do with the Object Oriented Programming concept of "inheritance."
+It is not critical you understand precisely how inheritance works (though I would encourage anyone to look it up!),
+only that functions and variables declared in functions, including SynthDefs, are passed down to their
+child functions, though the parent functions do not have access to arguments and variables declared within
+their children.
+*/
+
 //The Array class can also easily allow one to inject a great deal of complexity to one's sound, especially when
 //dealing with random numbers.
 
