@@ -354,7 +354,7 @@ default value. The function nested in the sig variable has access to 'partial', 
 SynthDef does *not*. On the other hand, the nested function *does* have access to all of the arguments and variables
 declared earlier in the SynthDef. This has to do with the Object Oriented Programming concept of "inheritance."
 It is not critical you understand precisely how inheritance works (though I would encourage anyone to look it up!),
-only that functions and variables declared in functions, including SynthDefs, are passed down to their
+only that arguments and variables declared in functions, including SynthDefs, are passed down to their
 child functions, though the parent functions do not have access to arguments and variables declared within
 their children.
 */
