@@ -87,7 +87,7 @@ x.play;
 
 /*
 That's great, but what if one nevertheless wants to pass specific values into the function that may not be easily
-expressed through a formula? As discussed in last week's class, when passing an integer into a function, what
+expressed through a formula? As discussed in last week's class, when passing an integer into a function using .do, what
 one is really doing is passing an array of indices, beginning from 0 up to one less than the specified integer.
 Therefore, 8.do is passing the array [0, 1, 2, 3, 4, 5, 6, 7] into the function. Knowing this, we can tailor the array
 to include whatever values we desire:
@@ -111,7 +111,7 @@ x = {
 You might have noticed that the iterative function now includes two arguments: freq and i. This is because any array passed
 into a function sends two data points for each in the original array: its value, and its index number. The reason why we only
 used the first of these before is that, using integer.do, each integer and its corresponding index is identical. Now that we're
-passing an array of custom values, the collected data and its corresponding indices are not the same, since we're still
+passing an array of custom values, the collected data and its corresponding indices are not the same. Since we're still
 basing amplitude on a formula making use of the current index value of the frequency array, we must pass both values
 into the function.
 
