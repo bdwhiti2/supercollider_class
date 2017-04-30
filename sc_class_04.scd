@@ -1,3 +1,5 @@
+s.boot;
+
 /*
 I. Presentation of HW
 
@@ -272,8 +274,6 @@ The following is a rudimentary noise gate. As soon as the computer picks up soun
 it sends an OSC trigger, using the SendTrig class, along path '/tr', and is picked up and interpreted by an accompanying
 OSCdef.
 */
-
-s.boot;
 
 s.meter;
 
