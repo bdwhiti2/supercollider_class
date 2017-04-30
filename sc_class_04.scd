@@ -123,7 +123,7 @@ x = {
 	var sum = 0;
 	var temp;
 
-	[200, 333, 178, 505].do{|freq| //see below
+	[200, 333, 178, 505].do{|freq|
 		[0.6, 1, 0.3, 0.5].do{|amp|
 			temp = SinOsc.ar(freq, mul: amp).dup;
 			sum = sum + temp;
